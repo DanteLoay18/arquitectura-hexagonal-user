@@ -19,16 +19,12 @@ async function bootstrap() {
 
  
 
-  // app.useGlobalPipes(
-  //   new ValidationPipe({
-  //     whitelist: true,
-  //     forbidNonWhitelisted: true,
-  //     transform:true,
-  //     transformOptions:{
-  //       enableImplicitConversion:true,
-  //     }
-  //     })
-  //   )
+  app.useGlobalPipes( 
+    new ValidationPipe({
+      whitelist: true,
+      forbidNonWhitelisted: true,
+    })
+   );
 
   await app.listen(config.port);
 }

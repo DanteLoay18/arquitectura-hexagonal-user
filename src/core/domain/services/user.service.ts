@@ -8,4 +8,8 @@ export class UserService{
     createUser(user:User){
         return this.userRepository.create(user);
     }
+
+    findOneById(id:string){
+        return this.userRepository.findOneById(id);
+    }
 }

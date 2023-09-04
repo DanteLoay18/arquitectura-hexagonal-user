@@ -7,11 +7,14 @@ import { CreateUserCommand } from './applictation/features/User/write/create/cre
 import { CreateUserHandler } from './applictation/features/User/write/create/create-user.handler';
 import { UserService } from './domain/services/user.service';
 import { UserRepository } from './domain/ports/outbound/user.repository';
+import { UsuarioQueryById, UsuarioQueryByIdHandler } from './applictation/features/User/read/userQuerybyId';
 
 const providers = [
     UserUseCases,
     CreateUserCommand,
-    CreateUserHandler
+    CreateUserHandler,
+    UsuarioQueryById,
+    UsuarioQueryByIdHandler
   ]
 
 @Module({

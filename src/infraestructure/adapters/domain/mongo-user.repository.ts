@@ -10,11 +10,17 @@ export class MongoUserRepository implements UserRepository {
     constructor(@InjectModel(User.name) private userRepository: Model<User>) { }
     
     
+    
     create(user: User): Promise<User> {
         return this.userRepository.create(user);
     }
 
-
+    findOneById(id: string): Promise<User> {
+        return this.userRepository.findById(id);
+    }
+    findAll(): Promise<User[]> {
+        throw new Error("Method not implemented.");
+    }
     
    
 
